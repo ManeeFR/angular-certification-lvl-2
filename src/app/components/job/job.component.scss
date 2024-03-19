@@ -1,0 +1,92 @@
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    gap: 3vw;
+    min-height: 9vh;
+    max-height: 9vh;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 9vh;
+        max-height: 9vh;
+
+        > img {
+            min-width: 60px;
+            max-width: 60px;
+            min-height: 60px;
+            max-height: 60px;
+        }
+        > a {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+    > div.job-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    > div.job-info {
+        flex-grow: 1;
+
+        > a {
+            font-size: 0.8rem;
+        }
+        > .references {
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            > div {
+                min-inline-size: fit-content;
+                margin-right: 2vw;
+            }
+        }
+    }
+    > div.icon-star {
+        min-height: max-content;
+        > i {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        > i.active > svg {
+            fill: yellow;
+        }
+    }
+}
+
+@media (max-width: 667px) {
+    article,
+    article > div {
+        min-height: 17vh;
+        max-height: 17vh;
+        > img {
+            min-width: 80px;
+            max-width: 80px;
+            min-height: 80px;
+            max-height: 80px;
+        }
+    }
+}
+@media (max-width: 500px) {
+    article,
+    article > div {
+        min-height: 23vh;
+    }
+    article > div.job-info {
+        > a,
+        > div > div {
+            font-size: 0.7em;
+        }
+    }
+}

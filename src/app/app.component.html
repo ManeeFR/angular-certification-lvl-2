@@ -1,0 +1,26 @@
+<header>
+    <h1>Find your job</h1>
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/jobs" [class.active]="isActive('/jobs')">
+                    {{ "Jobs" | uppercase }}
+                </a>
+            </li>
+            <li>
+                <a
+                    routerLink="/jobs/favorites"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                >
+                    {{ "Favorites" | uppercase }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="main-section">
+        <router-outlet></router-outlet>
+    </div>
+</main>

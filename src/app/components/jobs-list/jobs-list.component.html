@@ -1,0 +1,16 @@
+<section>
+    @for (job of allJobsList$ | async; track $index) {
+        @if (!isInFavoritesPage || favoritesJobsIds.includes(job.id)) {
+            <app-job
+                [job]="job"
+                [showStar]="!isInFavoritesPage"
+                [isFavorite]="favoritesJobsIds.includes(job.id)"
+                (toggleFavorite)="handleFavoriteChange($event)">
+            </app-job>
+        }
+    }
+    @if (isInFavoritesPage && favoritesJobsIds.length === 0) {
+        <div class="no-favorite">No favorite selected.</div>
+    }
+</section>
+ 
